@@ -1,83 +1,79 @@
-# Advanced Playwright
+# Продвинутый Playwright
 
-Hi 👋🏽!
+Привет 👋🏽!
 
-Welcome to the course "Advanced Playwright" by [Renata Andrade](https://testingwithrenata.com/) for the [Test Automation University](https://testautomationu.applitools.com/).
-If you are new to Playwright, I invite you to a look at the [Introduction to Playwright](https://testautomationu.applitools.com/instructors/renata_andrade.html) course.
+Добро пожаловать на курс "Продвинутый Playwright" от [Ренаты Андраде](https://testingwithrenata.com/) для [Университета Автоматизации Тестирования](https://testautomationu.applitools.com/). Если вы новичок в Playwright, я приглашаю вас ознакомиться с курсом [Введение в Playwright](https://testautomationu.applitools.com/instructors/renata_andrade.html).
 
-- [Advanced Playwright](#advanced-playwright)
-  * [Chapter 1 - Exercises](#chapter-1---exercises)
-  * [Chapter 2 - Exercises](#chapter-2---exercises)
-  * [Chapter 3 - Exercises](#chapter-3---exercises)
-  * [Chapter 4 - Exercises](#chapter-4---exercises)
-  * [Chapter 5 - Exercises](#chapter-5---exercises)
-  * [Chapter 6 - Exercises](#chapter-6---exercises)
+- [Продвинутый Playwright](#продвинутый-playwright)
+  * [Глава 1 - Упражнения](#глава-1---упражнения)
+  * [Глава 2 - Упражнения](#глава-2---упражнения)
+  * [Глава 3 - Упражнения](#глава-3---упражнения)
+  * [Глава 4 - Упражнения](#глава-4---упражнения)
+  * [Глава 5 - Упражнения](#глава-5---упражнения)
+  * [Глава 6 - Упражнения](#глава-6---упражнения)
 
-## Chapter 1 - Exercises
+## Глава 1 - Упражнения
 
-1. Comment the line `test.use({ storageState: { cookies: [], origins: [] } });` from [login.spec.ts](/tests/ui/specs/login.spec.ts), add a `.only` at the `test.describe` inside the same file and run the test with the command `test-ui-c`. Observe what happens. Revert the first change and run the test again. See that it's passing again. Revert all the code at the end.
+1. Закомментируйте строку `test.use({ storageState: { cookies: [], origins: [] } });` в файле [login.spec.ts](/tests/ui/specs/login.spec.ts), добавьте `.only` к `test.describe` в том же файле и запустите тест с командой `test-ui-c`. Обратите внимание на результат. Верните первое изменение и запустите тест снова. Убедитесь, что он снова проходит. Восстановите исходный код в конце.
 
-1. In the [playwright.config.ts](/playwright.config.ts) change the path of the `storageState`, add some folder name and change the file name. In the [profile-stored-authentication.spec.ts](/tests/ui/specs/profile-stored-authentication.spec.ts) add a `.only` at the `test.describe` and run the test with the command `test-ui-c`. Observe the result. What differences did you notice?
+1. В файле [playwright.config.ts](/playwright.config.ts) измените путь к `storageState`, добавьте имя папки и измените имя файла. В файле [profile-stored-authentication.spec.ts](/tests/ui/specs/profile-stored-authentication.spec.ts) добавьте `.only` к `test.describe` и запустите тест с командой `test-ui-c`. Обратите внимание на результат. Какие различия вы заметили?
 
-1. In the [global-setup.ts](/tests/setup/global-setup.ts) change the headless mode to `false`. Run the test [profile-stored-authentication.spec.ts](/tests/ui/specs/profile-stored-authentication.spec.ts) by adding a `.only` at the `test.describe` and using the command `test-ui-c`. Observe the result. Was it any faster than in headless mode?
+1. В файле [global-setup.ts](/tests/setup/global-setup.ts) измените режим headless на `false`. Запустите тест [profile-stored-authentication.spec.ts](/tests/ui/specs/profile-stored-authentication.spec.ts), добавив `.only` к `test.describe` и используя команду `test-ui-c`. Обратите внимание на результат. Было ли это быстрее, чем в headless режиме?
 
-1. In the [global-setup.ts](/tests/setup/global-setup.ts) explore other browsers instead of chromium.  Run the test [profile-stored-authentication.spec.ts](/tests/ui/specs/profile-stored-authentication.spec.ts) by adding a `.only` at the `test.describe` and using the command `test-ui-c`. What browser performed better?
+1. В файле [global-setup.ts](/tests/setup/global-setup.ts) исследуйте другие браузеры вместо chromium. Запустите тест [profile-stored-authentication.spec.ts](/tests/ui/specs/profile-stored-authentication.spec.ts), добавив `.only` к `test.describe` и используя команду `test-ui-c`. Какой браузер показал лучшие результаты?
 
-1. In the [global-setup.ts](/tests/setup/global-setup.ts) implement the trace of failures by following this doc // https://playwright.dev/docs/test-global-setup-teardown#capturing-trace-of-failures-during-global-setup. Force a test failure (by passing an invalid username or password for example). What are the advantages of using trace in this file?
+1. В файле [global-setup.ts](/tests/setup/global-setup.ts) реализуйте трассировку сбоев, следуя этой документации // https://playwright.dev/docs/test-global-setup-teardown#capturing-trace-of-failures-during-global-setup. Вызовите сбой теста (например, передав неверное имя пользователя или пароль). Какие преимущества дает использование трассировки в этом файле?
 
-1. Implement a regular sign in test and a sign in using stored state for another website that you have access to. If you need a suggestion, you can use https://demo.applitools.com/ (any username and password) or https://www.saucedemo.com/. What challenges did you have?
+1. Реализуйте тест на обычный вход и вход с использованием сохраненного состояния для другого сайта, к которому у вас есть доступ. Если вам нужен совет, вы можете использовать https://demo.applitools.com/ (любое имя пользователя и пароль) или https://www.saucedemo.com/. Какие трудности у вас возникли?
 
-1. Implement an authentication via API request following this doc https://playwright.dev/docs/auth#authenticate-with-api-request. You can use the same https://demoqa.com/books or any other website. How faster that is compared to the UI sign in?
+1. Реализуйте аутентификацию через API-запрос, следуя этой документации https://playwright.dev/docs/auth#authenticate-with-api-request. Вы можете использовать тот же https://demoqa.com/books или любой другой сайт. Насколько это быстрее по сравнению с входом через UI?
 
-1. Implement a multi-role sing in test using the "auth-setup" strategy (using something similar to the [auth-setup.ts](/tests/setup/auth-setup.ts) file & [playwright-auth.config.ts](/playwright-auth.config.ts) setup & [profile-stored-auth-multi-role-user.spec.ts](/tests/ui/specs-auth/profile-stored-auth-multi-role-user.spec.ts)) for an application that you have access to. If you need a suggestion, you can use https://www.saucedemo.com/ (there are different users that could be used for different scenarios).
+1. Реализуйте тест на многоролевой вход с использованием стратегии "auth-setup" (используя что-то похожее на файл [auth-setup.ts](/tests/setup/auth-setup.ts) и настройки [playwright-auth.config.ts](/playwright-auth.config.ts) и [profile-stored-auth-multi-role-user.spec.ts](/tests/ui/specs-auth/profile-stored-auth-multi-role-user.spec.ts)) для приложения, к которому у вас есть доступ. Если вам нужен совет, вы можете использовать https://www.saucedemo.com/ (есть разные пользователи, которые могут использоваться для разных сценариев).
 
-1. Implement a multi-role sing in test using the "auth-setup" strategy (using something similar to the [auth-setup.ts](/tests/setup/auth-setup.ts) file & [playwright-auth.config.ts](/playwright-auth.config.ts) setup & [profile-stored-auth-multi-role-example.spec.ts](/tests/ui/specs-auth/profile-stored-auth-multi-role-example.spec.ts)) for an application that you have access to. If you need a suggestion, you can use https://www.saucedemo.com/ (there are different users that could be used for different scenarios).
+1. Реализуйте тест на многоролевой вход с использованием стратегии "auth-setup" (используя что-то похожее на файл [auth-setup.ts](/tests/setup/auth-setup.ts) и настройки [playwright-auth.config.ts](/playwright-auth.config.ts) и [profile-stored-auth-multi-role-example.spec.ts](/tests/ui/specs-auth/profile-stored-auth-multi-role-example.spec.ts)) для приложения, к которому у вас есть доступ. Если вам нужен совет, вы можете использовать https://www.saucedemo.com/ (есть разные пользователи, которые могут использоваться для разных сценариев).
 
+## Глава 2 - Упражнения
 
-## Chapter 2 - Exercises
+1. Реализуйте новый тест с использованием динамического page object для страницы Форм (https://demoqa.com/automation-practice-form). Обратите внимание, что эта страница не требует входа, поэтому вам нужно будет это учесть. Какие изменения в существующем коде вам пришлось внести? Как вы обработали стратегию buildUrl?
 
-1. Implement a new test using dynamic page object for the Forms page (https://demoqa.com/automation-practice-form). Note that this page doesn't require a sign in, so you'll need to have it covered. What changes in the existing code you had to make? How did you handle the buildUrl strategy?
+1. Реализуйте новый тест с использованием фикстуры для поиска на странице Магазина Книг (https://demoqa.com/books). Исследуйте сценарии для одного результата ("You Don't Know JS"), нескольких результатов ("java") и отсутствия результатов ("playwright"). Насколько легко было реализовать эти многочисленные сценарии? Легко ли понятен код? Считаете ли вы использование фикстур для этого сценария хорошей стратегией?
 
-1. Implement a new test using fixture for the search at the Book Store page (https://demoqa.com/books). Explore scenarios for 1 single result ("You Don't Know JS"), multiple results ("java") and no results ("playwright"). How easy was to implement those multiple scenarios? Is the code easy to understand? Do you considere the use of fixtures for this scenario a good strategy?
+1. Реализуйте новый тест с использованием фикстуры для поиска на странице Магазина Книг (https://demoqa.com/books). Исследуйте сценарии для одного результата ("You Don't Know JS"), нескольких результатов ("java") и отсутствия результатов ("playwright"). Исследуйте использование параметров тоже. Насколько легко было реализовать эти многочисленные сценарии? Легко ли понятен код? Считаете ли вы использование фикстур для этого сценария хорошей стратегией?
 
-1. Implement a new test using fixture for the search at the Book Store page (https://demoqa.com/books). Explore scenarios for 1 single result ("You Don't Know JS"), multiple results ("java") and no results ("playwright"). Explore the use of params too. How easy was to implement those multiple scenarios? Is the code easy to understand? Do you considere the use of fixtures for this scenario a good strategy?
+## Глава 3 - Упражнения
 
-## Chapter 3 - Exercises
+1. Реализуйте новый тест для "удаления одной книги из коллекции" (https://demoqa.com/profile) с использованием существующего `deleteBookAPIByIsbn` в [delete-books-collection.ts](/tests/api/requests/delete-books-collection.ts). Насколько легко было использовать этот существующий метод? Какие трудности у вас возникли при реализации теста? Использовали ли вы документацию swagger вообще? Нужно ли было вносить какие-либо изменения для работы метода?
 
-1. Implement a new test for "delete 1 book from the collection" (https://demoqa.com/profile) using the existing `deleteBookAPIByIsbn` in [delete-books-collection.ts](/tests/api/requests/delete-books-collection.ts). How easy was to use that existing method? What challenges did you have to implement the test? Did you use the swagger docs at all? Did you need to make any changes for the method to work?
+1. Реализуйте новый тест для "добавления списка книг в коллекцию" (это не доступно в UI, только через API) - вот [документация swagger](https://demoqa.com/swagger/#/BookStore/BookStoreV1BooksPost:~:text=Description-,addListOfBooks,-*). Насколько легко было использовать стандартную методологию? Какие трудности у вас возникли при реализации теста? Как вы обработали стратегию buildUrl? Была ли реализация обработки ошибок полезной вообще?
 
-1. Implement a new test for "add list of books to collection" (this is not available in the UI, only via API) - Here is the [swagger doc](https://demoqa.com/swagger/#/BookStore/BookStoreV1BooksPost:~:text=Description-,addListOfBooks,-*). How easy was to use the standard methodology? What challenges did you have to implement the test? How did you handle the buildUrl strategy? Was the error handling implementation usefull at all?
+## Глава 4 - Упражнения
 
-## Chapter 4 - Exercises
+1. Если вы еще не сделали этого, обновите свои вновь созданные тесты (Упражнение 2.1, 2.3, 2.4, 3.1, 3.2), чтобы использовать JSON. Каковы преимущества использования этого подхода? Есть ли другой подход, который вы бы использовали для этих сценариев?
 
-1. If you haven't yet, update your newly created tests (Exercise 2.1, 2.3, 2.4, 3.1, 3.2) to use JSON. What are the be benefits of using this approach? Is there any other approach you'd use for these scenarios?
+1. Выберите один из сценариев и обновите его для использования CSV файла. Были ли какие-либо преимущества с точки зрения кодирования при использовании этого подхода? Как насчет преимуществ с точки зрения времени выполнения тестов, какой подход быстрее?
 
-1. Choose one of the scenarios and update it to use a CSV file. Where there any advantages from the coding perspective in using this approach? How about the advantages in terms of test runtime, which approach is the fastest?
+1. Реализуйте тест для выполнения сортировки или поиска с использованием перехвата HTTPS для страницы Списка Книг (https://demoqa.com/books) - вот [документация swagger](https://demoqa.com/swagger/#/BookStore/BookStoreV1BooksGet:~:text=v1/Books-,Parameters,-Try%20it%20out). Считаете ли вы этот подход подходящим для этого сценария? Почему бы вам не использовать его?
 
-1. Implement a test to perform a sort or a search using HTTPS interception for the Books List page (https://demoqa.com/books) - Here is the [swagger doc](https://demoqa.com/swagger/#/BookStore/BookStoreV1BooksGet:~:text=v1/Books-,Parameters,-Try%20it%20out). Do you consider this approach appropriate for this scenario? Why would you not use it?
+## Глава 5 - Упражнения
 
-## Chapter 5 - Exercises
+1. Интегрируйте тесты визуального регрессионного тестирования с Applitools с [profile-api-interception.spec.ts](/tests/ui/specs/profile-api-interception.spec.ts) и выберите оптимальную стратегию настроек проверки для этого теста. Какой вариант вы выбрали? Есть ли второй вариант, который вы бы использовали?
+1. Запустите один из тестов, который включает визуальное регрессионное тестирование, для другого пользователя. Какие проблемы вы заметили? Как бы вы их решили?
 
-1. Integrate visual regression tests with Applitools with the [profile-api-interception.spec.ts](/tests/ui/specs/profile-api-interception.spec.ts) and choose the ideal check settings strategy for this test. What option did you pick? Is there be a second option you'd use?
-1. Run one of the tests that has visual regression to a different user. What problems did you notice. How would you solve them?
+## Глава 6 - Упражнения
 
-## Chapter 6 - Exercises
-
-1. If you are working on a project, regardless the testing framework your team is using, idetify the stages of your pipeline. 
-    1. How long each stage is taking? 
-    1. Is there any job or stage that can be pararelized to speed up the pipeline? 
-    1. Are the tests using any pararelization strategy? 
-    1. Are the end-to-end/ui tests blocking the deployment?
-    1. Is there any communication (email to the team or job's result posted in a communication tool such as Slack or Microsoft Teams) being sent?
-    1. How often does the build fail and it's noticed only after hours/days?
-1. If you are already using playwright, are you using any sharding strategy? How often do you need to revisit that setup to keep it efficient?
-
-
+1. Если вы работаете над проектом, независимо от используемого вашей командой фреймворка тестирования, определите этапы вашего пайплайна.
+    1. Сколько времени занимает каждый этап?
+    1. Есть ли какой-либо этап или работа, которые можно распараллелить для ускорения пайплайна?
+    1. Используют ли тесты какую-либо стратегию параллелизации?
+    1. Блокируют ли end-to-end/ui тесты развертывание?
+    1. Отправляется ли какая-либо коммуникация (email команде или результат работы в коммуникационный инструмент, такой как Slack или Microsoft Teams)?
+    1. Как часто сборка падает, и это замечают только через часы/дни?
+1. Если вы уже используете playwright, используете ли вы какую-либо стратегию шардинга? Как часто вам нужно пересматривать эту настройку, чтобы она оставалась эффективной?
 
 ___
 
-💡 Share on LinkedIn something interesting you've learned! Don't forget to tag me [Renata Andrade](https://www.linkedin.com/in/raptatinha/).
+💡 Поделитесь в LinkedIn чем-то интересным, что вы узнали! Не забудьте отметить меня [Ренату Андраде](https://www.linkedin.com/in/raptatinha/).
 
-💜 If you have questions, feel free to post them on [github](https://github.com/raptatinha/tau-advanced-playwright/issues).
+💜 Если у вас есть вопросы, не стесняйтесь задавать их на [github](https://github.com/raptatinha/tau-advanced-playwright/issues).
 
-Happy Testing 🎭
+Счастливого Тестирования 🎭
